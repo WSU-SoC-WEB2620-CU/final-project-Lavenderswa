@@ -1,1 +1,69 @@
-// Your styles go here
+// Variable overrides 
+$primary:#F30058; //Pinkred
+$secondary:#6C0000; //Darkred
+$success:#6D6D6D; //Darkgrey
+$danger:#00BC5F; //Green
+$warning:#008269; //Blue
+$info:#CFCFCF; //Lightgrey
+$light:#F4F0E0; //Offwhite 
+$dark:#645F50; //Yellowgrey
+
+
+//hover and after states, images  
+#getticketsbutton:hover {
+    background:$danger;
+    color:white;
+}
+
+//make this a new scss file "size_breakpoints"
+@media only screen and (min-width:0px) and (max-width:600px) {//small, "mobile" 
+    .col-2 {background: red;}
+
+.mediumitem, .fullitem { //only show small items
+    display:none;
+}
+
+.smallitem {
+    display:inherit;
+}
+
+}
+
+@media only screen and (min-width:601px) and (max-width: 1200px) {//medium
+    .col-2 {background: aqua;}
+    
+    .smallitem, .fullitem {//only show medium items
+        display:none;
+    }
+
+    .mediumitem {
+        display:inherit;
+    }
+    
+}
+
+@media only screen and (min-width:1200px) {//fullscreen (large)
+.col-2 {background:orange;}
+
+.mediumitem, .smallitem {//only show large items
+    display:none;
+}
+
+.fullitem {
+    display:inherit;
+}
+
+}
+
+.col-2{ //all sizes
+border:5px solid green;
+}
+//end of "size_breakpoints"
+
+
+$enable-shadows:true;
+$prefix:"mo-";
+
+//Import Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "@fortawesome/fontawesome-free/css/all.css";
